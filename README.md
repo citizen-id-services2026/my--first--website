@@ -109,11 +109,23 @@
     </button>
 
 </div>
-    <section id="about">
-        <h2>About</h2>
-        <p>यह मेरी पहली वेबसाइट है।</p>
-    </section>
+    
+<section id="contact">
+    <h2>मुझसे संपर्क करें 📩</h2>
 
+    <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="आपका नाम" required>
+        <br><br>
+
+        <input type="email" placeholder="आपका ईमेल" required>
+        <br><br>
+
+        <textarea placeholder="अपना संदेश लिखें" rows="5" required></textarea>
+        <br><br>
+
+        <button type="submit">संदेश भेजें</button>
+    </form>
+</section>
     <section id="services">
         <h2>Services</h2>
         <p>मैं यहाँ अपनी सेवाओं की जानकारी दूँगा।</p>
