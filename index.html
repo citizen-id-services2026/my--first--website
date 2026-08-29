@@ -1,320 +1,4 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>मेरी पहली वेबसाइट</title>
-
-    <style>.profile-photo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid white;
-    margin-bottom: 15px;box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f7fa;
-            text-align: center;
-        }
-
-        nav {
-            background: #111827;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-
-        header {
-            background: #2563eb;
-            color: white;
-            padding: 50px 20px;
-        }
-
-        h1 {
-            font-size: 40px;margin: 10px 0;
-        }
-
-        .content,
-        section {
-            background: white;
-            max-width: 700px;
-            margin: 25px auto;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        section h2 {
-            color: #2563eb;
-        }
-
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 14px 25px;
-            font-size: 18px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        input,
-        textarea {
-            width: 90%;
-            max-width: 500px;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background: #111827;
-            color: white;
-        }.contact-btn {
-    display: inline-block;
-    margin: 8px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    background: #2563eb;
-}
-
-.contact-btn:hover {
-    opacity: 0.85;
-}
-    </style>
-</head>
-
-<body>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <header id="home">
-      <img src="WhatsApp Image 2026-08-29 at 1.30.25 PM.jpeg" alt="मेरी फोटो" class="profile-photo">
-        <h1>नमस्ते! 👋</h1>
-        <p>मेरी वेबसाइट में आपका स्वागत है</p>
-    </header>
-
-    <div class="content">
-        <h2>मेरे बारे में 👨‍💻</h2>
-
-        <p>
-            नमस्ते! मेरा नाम Subhash है।
-            यह मेरी पहली वेबसाइट है।
-            मैं वेब डिजाइन और टेक्नोलॉजी सीख रहा हूँ।
-        </p>
-
-        <button onclick="showMessage()">
-            मुझसे जुड़ें
-        </button>
-    </div>
-
-   <section id="about">
-    <h2>हमारे बारे में 👋</h2>
-
-    <p>
-        आपका स्वागत है!
-    </p>
-
-    <p>
-        हम Bharni, Srimadhopur, Sikar, Rajasthan में
-        ऑनलाइन और डिजिटल सेवाएँ उपलब्ध कराने का प्रयास करते हैं।
-    </p>
-
-    <p>
-        हमारा उद्देश्य लोगों को ऑनलाइन सेवाएँ
-        आसान और सुविधाजनक तरीके से उपलब्ध कराना है।
-    </p>
-</section>
-<section id="services">
-    <h2>मेरी सेवाएँ 🛠️</h2>
-
-    <p>🪪 आधार से संबंधित ऑनलाइन सेवाएँ</p>
-    <p>💳 पैन कार्ड से संबंधित सेवाएँ</p>
-    <p>📄 ऑनलाइन फॉर्म भरना</p>
-    <p>🖨️ प्रिंट और स्कैन</p>
-    <p>📑 प्रमाण पत्र के लिए ऑनलाइन आवेदन</p>
-    <p>💻 अन्य ऑनलाइन सेवाएँ</p><hr>
-
-<h3>🪪 ID Card Size में फोटो तैयार करें</h3>
-
-<p>आधार कार्ड, PAN Card, Driving Licence, Voter ID आदि की फोटो चुनें:</p>
-
-<input type="file" id="idCardFile" accept="image/*">
-
-<br><br>
-
-<label>साइज चुनें:</label>
-<select id="idCardSize">
-    <option value="85.6,54">ID Card (85.6 × 54 mm)</option>
-    <option value="86,54">Aadhaar/PAN Card (86 × 54 mm)</option>
-    <option value="90,60">Driving Licence (90 × 60 mm)</option>
-</select>
-<br><br>
-
-<button onclick="printIDCard()">🖨️ प्रिंट निकालें</button>
-
-<div id="idCardPreview"></div>
-<br><br>
-
-
-    </section>
-    <section id="document-print">
-    <h2>📄 Document Print Center</h2>
-
-    <p>दस्तावेज़ चुनें:</p>
-
-    <select id="documentType">
-        <option value="custom">Custom Document</option>
-        <option value="aadhaar">Aadhaar Card</option>
-        <option value="pan">PAN Card</option>
-        <option value="dl">Driving Licence</option>
-        <option value="voter">Voter ID</option>
-    </select>
-
-    <br><br>
-
-    <input type="file" id="documentFile" accept="image/*">
-
-    <br><br>
-
-    <div id="previewBox">
-        <p>यहाँ दस्तावेज़ का Preview दिखाई देगा</p>
-    </div>
-
-    <br>
-
-    <button onclick="printDocument()">🖨️ Print करें</button>
-</section>
-
-
-    <section id="contact">
-        <h2>मुझसे संपर्क करें 📩</h2><p><strong>नाम:</strong> Subhash</p><p>
-    <strong>पता:</strong><br>
-    Bharni, Srimadhopur, Sikar, Rajasthan - 332715
-</p>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Bharni%2C+Srimadhopur%2C+Sikar%2C+Rajasthan%2C+332715"
-   target="_blank">
-    <button type="button">📍 Google Maps पर रास्ता देखें</button>
-</a>
-
-<p>
-    <strong>मोबाइल:</strong>
-    <a href="tel:+918890922880">📞 +91 8890922880</a>
-</p>
-<a href="https://wa.me/918890922880" target="_blank" class="contact-btn">
-    💬 WhatsApp पर संपर्क करें
-</a>
-
-<a href="tel:+918890922880" class="contact-btn">
-    📞 अभी कॉल करें
-</a>
-<p><strong>WhatsApp:</strong> 8890922880</p>
- <form onsubmit="sendMessage(event)">
-            <input type="text" placeholder="आपका नाम" required>
-            <br><br>
-
-            <input type="email" placeholder="आपका ईमेल" required>
-            <br><br>
-
-            <textarea placeholder="अपना संदेश लिखें" rows="5" required></textarea>
-            <br><br>
-
-            <button type="submit">संदेश भेजें</button>
-        </form>
-    </section>
-
-    <footer>
-        © 2026 मेरी वेबसाइट
-    </footer>
-
-    <script>
-        function showMessage() {
-            alert("नमस्ते! मेरी वेबसाइट पर आपका स्वागत है 😊");
-        }
-
-        function sendMessage(event) {
-            event.preventDefault();
-            alert("धन्यवाद! आपका संदेश प्राप्त हुआ 😊");
-        }const idCardFile = document.getElementById("idCardFile");
-const idCardPreview = document.getElementById("idCardPreview");
-
-idCardFile.addEventListener("change", function () {
-    const file = this.files[0];
-
-    if (!file) return;
-
-    const image = document.createElement("img");
-    image.src = URL.createObjectURL(file);
-
-    image.style.width = "86mm";
-    image.style.height = "54mm";
-    image.style.objectFit = "cover";
-    image.style.border = "1px solid #ccc";
-
-    idCardPreview.innerHTML = "";
-    idCardPreview.appendChild(image);
-});
-
-function printIDCard() {
-    const image = idCardPreview.querySelector("img");
-
-    if (!image) {
-        alert("पहले दस्तावेज़ की फोटो चुनें");
-        return;
-    }
-
-    const printWindow = window.open("", "_blank");
-
-    printWindow.document.write(`
-        <html>
-        <head>
-            <title>ID Card Print</title>
-            <style>
-                body {
-                    margin: 0;
-                    text-align: center;
-                }
-
-                img {
-                    width: 86mm;
-                    height: 54mm;
-                    object-fit: cover;
-                }
-            </style>
-        </head>
-        <body>
-            <img src="${image.src}">
-        </body>
-        </html>
-    `);
-
-    printWindow.document.close();
-
-    printWindow.onload = function () {
-        printWindow.print();
-    };
-}const documentFile = document.getElementById("documentFile");
+<script>
 const documentFile = document.getElementById("documentFile");
 const previewBox = document.getElementById("previewBox");
 
@@ -334,32 +18,51 @@ documentFile.addEventListener("change", function () {
     previewBox.appendChild(image);
 });
 
+
 function printDocument() {
     const image = previewBox.querySelector("img");
 
     if (!image) {
-        alert("पहले दस्तावेज़ की फोटो चुनें।");
+        alert("पहले दस्तावेज़ की फोटो चुनें");
         return;
     }
 
     const printWindow = window.open("", "_blank");
 
+    if (!printWindow) {
+        alert("Print window नहीं खुल सकी। Browser में pop-up allow करें।");
+        return;
+    }
+
     printWindow.document.write(`
+        <!DOCTYPE html>
         <html>
         <head>
             <title>Document Print</title>
+
             <style>
-                body {
+                @page {
                     margin: 0;
+                }
+
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
                     text-align: center;
                 }
 
                 img {
                     max-width: 100%;
                     max-height: 100vh;
+                    width: auto;
+                    height: auto;
+                    object-fit: contain;
                 }
             </style>
         </head>
+
         <body>
             <img src="${image.src}">
         </body>
@@ -369,9 +72,8 @@ function printDocument() {
     printWindow.document.close();
 
     printWindow.onload = function () {
+        printWindow.focus();
         printWindow.print();
     };
 }
 </script>
-</body>
-</html>
