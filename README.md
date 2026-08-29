@@ -88,18 +88,27 @@
 
     <div class="content">
 
-        <h2>मेरी वेबसाइट</h2>
+    <h2>मेरे बारे में 👨‍💻</h2>
 
-        <p>
-            यह वेबसाइट मैंने GitHub की मदद से बनाई है।
-        </p>
+    <p>
+        नमस्ते! मेरा नाम Subhash है।
+        यह मेरी पहली वेबसाइट है।
+        मैं वेब डिजाइन और टेक्नोलॉजी सीख रहा हूँ।
+    </p>
 
-        <button onclick="showMessage()">
-            यहाँ दबाएँ
-        </button>
+    <h2>मेरी रुचियाँ 🚀</h2>
 
-    </div>
+    <p>
+        💻 Web Development
+        📱 Technology
+        🌐 Internet
+    </p>
 
+    <button onclick="showMessage()">
+        मुझसे जुड़ें
+    </button>
+
+</div>
     <section id="about">
         <h2>About</h2>
         <p>यह मेरी पहली वेबसाइट है।</p>
