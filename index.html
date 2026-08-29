@@ -1,19 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>मेरी पहली वेबसाइट</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+            text-align: center;
+        }
+
+        nav {
+            background: #111827;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .content,
+        section {
+            background: white;
+            max-width: 700px;
+            margin: 25px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #2563eb;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        input,
+        textarea {
+            width: 90%;
+            max-width: 500px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #111827;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>नमस्ते! 👋</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <h2>मेरी पहली वेबसाइट</h2>
+    <header id="home">
+        <h1>नमस्ते! 👋</h1>
+        <p>मेरी वेबसाइट में आपका स्वागत है</p>
+    </header>
 
-    <p>यह वेबसाइट मैंने GitHub की मदद से बनाई है।</p>
+    <div class="content">
+        <h2>मेरे बारे में 👨‍💻</h2>
 
-    <button onclick="alert('नमस्ते! वेबसाइट चल रही है 🎉')">
-        यहाँ दबाएँ
-    </button>
+        <p>
+            नमस्ते! मेरा नाम Subhash है।
+            यह मेरी पहली वेबसाइट है।
+            मैं वेब डिजाइन और टेक्नोलॉजी सीख रहा हूँ।
+        </p>
+
+        <button onclick="showMessage()">
+            मुझसे जुड़ें
+        </button>
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>यह मेरी पहली वेबसाइट है।</p>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <p>यहाँ मेरी सेवाओं की जानकारी दी जाएगी।</p>
+    </section>
+
+    <section id="contact">
+        <h2>मुझसे संपर्क करें 📩</h2>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="आपका नाम" required>
+            <br><br>
+
+            <input type="email" placeholder="आपका ईमेल" required>
+            <br><br>
+
+            <textarea placeholder="अपना संदेश लिखें" rows="5" required></textarea>
+            <br><br>
+
+            <button type="submit">संदेश भेजें</button>
+        </form>
+    </section>
+
+    <footer>
+        © 2026 मेरी वेबसाइट
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert("नमस्ते! मेरी वेबसाइट पर आपका स्वागत है 😊");
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            alert("धन्यवाद! आपका संदेश प्राप्त हुआ 😊");
+        }
+    </script>
 
 </body>
 </html>
