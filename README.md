@@ -6,7 +6,12 @@
 
     <title>मेरी पहली वेबसाइट</title>
 
-    <style>
+    <style><script>
+function sendMessage(event) {
+    event.preventDefault();
+    alert("धन्यवाद! आपका संदेश प्राप्त हुआ 😊");
+}
+</script>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
