@@ -153,7 +153,32 @@
     <p>📄 ऑनलाइन फॉर्म भरना</p>
     <p>🖨️ प्रिंट और स्कैन</p>
     <p>📑 प्रमाण पत्र के लिए ऑनलाइन आवेदन</p>
-    <p>💻 अन्य ऑनलाइन सेवाएँ</p>
+    <p>💻 अन्य ऑनलाइन सेवाएँ</p><hr>
+
+<h3>🪪 ID Card Size में फोटो तैयार करें</h3>
+
+<p>आधार कार्ड, PAN Card, Driving Licence, Voter ID आदि की फोटो चुनें:</p>
+
+<input type="file" id="idCardFile" accept="image/*">
+
+<br><br>
+
+<label>साइज चुनें:</label>
+<select id="idCardSize">
+    <option value="85.6,54">ID Card (85.6 × 54 mm)</option>
+    <option value="86,54">Aadhaar/PAN Card (86 × 54 mm)</option>
+    <option value="90,60">Driving Licence (90 × 60 mm)</option>
+</select>
+<br><br>
+
+<button onclick="printIDCard()">🖨️ प्रिंट निकालें</button>
+
+<div id="idCardPreview"></div>
+<br><br>
+
+<button onclick="printIDCard()">🖨️ प्रिंट निकालें</button>
+
+<div id="idCardPreview"></div>
 </section>
     </section>
     <section id="document-print">
@@ -234,7 +259,65 @@
         function sendMessage(event) {
             event.preventDefault();
             alert("धन्यवाद! आपका संदेश प्राप्त हुआ 😊");
-        }
+        }const idCardFile = document.getElementById("idCardFile");
+const idCardPreview = document.getElementById("idCardPreview");
+
+idCardFile.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const image = document.createElement("img");
+    image.src = URL.createObjectURL(file);
+
+    image.style.width = "86mm";
+    image.style.height = "54mm";
+    image.style.objectFit = "cover";
+    image.style.border = "1px solid #ccc";
+
+    idCardPreview.innerHTML = "";
+    idCardPreview.appendChild(image);
+});
+
+function printIDCard() {
+    const image = idCardPreview.querySelector("img");
+
+    if (!image) {
+        alert("पहले दस्तावेज़ की फोटो चुनें");
+        return;
+    }
+
+    const printWindow = window.open("", "_blank");
+
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>ID Card Print</title>
+            <style>
+                body {
+                    margin: 0;
+                    text-align: center;
+                }
+
+                img {
+                    width: 86mm;
+                    height: 54mm;
+                    object-fit: cover;
+                }
+            </style>
+        </head>
+        <body>
+            <img src="${image.src}">
+        </body>
+        </html>
+    `);
+
+    printWindow.document.close();
+
+    printWindow.onload = function () {
+        printWindow.print();
+    };
+}
     </script>
 const documentFile = document.getElementById("documentFile");
 const previewBox = document.getElementById("previewBox");
