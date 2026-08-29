@@ -155,7 +155,35 @@
     <p>📑 प्रमाण पत्र के लिए ऑनलाइन आवेदन</p>
     <p>💻 अन्य ऑनलाइन सेवाएँ</p>
 </section>
-    
+    </section>
+    <section id="document-print">
+    <h2>📄 Document Print Center</h2>
+
+    <p>दस्तावेज़ चुनें:</p>
+
+    <select id="documentType">
+        <option value="custom">Custom Document</option>
+        <option value="aadhaar">Aadhaar Card</option>
+        <option value="pan">PAN Card</option>
+        <option value="dl">Driving Licence</option>
+        <option value="voter">Voter ID</option>
+    </select>
+
+    <br><br>
+
+    <input type="file" id="documentFile" accept="image/*">
+
+    <br><br>
+
+    <div id="previewBox">
+        <p>यहाँ दस्तावेज़ का Preview दिखाई देगा</p>
+    </div>
+
+    <br>
+
+    <button onclick="printDocument()">🖨️ Print करें</button>
+</section>
+
 
     <section id="contact">
         <h2>मुझसे संपर्क करें 📩</h2><p><strong>नाम:</strong> Subhash</p><p>
@@ -208,6 +236,62 @@
             alert("धन्यवाद! आपका संदेश प्राप्त हुआ 😊");
         }
     </script>
+const documentFile = document.getElementById("documentFile");
+const previewBox = document.getElementById("previewBox");
 
+documentFile.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const image = document.createElement("img");
+    image.src = URL.createObjectURL(file);
+
+    image.style.maxWidth = "100%";
+    image.style.maxHeight = "500px";
+    image.style.border = "1px solid #ccc";
+
+    previewBox.innerHTML = "";
+    previewBox.appendChild(image);
+});
+
+function printDocument() {
+    const image = previewBox.querySelector("img");
+
+    if (!image) {
+        alert("पहले दस्तावेज़ की फोटो चुनें।");
+        return;
+    }
+
+    const printWindow = window.open("", "_blank");
+
+    printWindow.document.write(`
+        <html>
+        <head>
+            <title>Document Print</title>
+            <style>
+                body {
+                    margin: 0;
+                    text-align: center;
+                }
+
+                img {
+                    max-width: 100%;
+                    max-height: 100vh;
+                }
+            </style>
+        </head>
+        <body>
+            <img src="${image.src}">
+        </body>
+        </html>
+    `);
+
+    printWindow.document.close();
+
+    printWindow.onload = function () {
+        printWindow.print();
+    };
+}
 </body>
 </html>
