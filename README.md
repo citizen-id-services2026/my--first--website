@@ -6,11 +6,37 @@
 
     <title>मेरी पहली वेबसाइट</title>
 
-    <style><script>
+    <script>
 function sendMessage(event) {
     event.preventDefault();
     alert("धन्यवाद! आपका संदेश प्राप्त हुआ 😊");
 }
+</script>section {
+    background: white;
+    margin: 25px auto;
+    padding: 30px;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #2563eb;
+}
+
+input,
+textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}<style><script>
 </script>
         body {
             font-family: Arial, sans-serif;
